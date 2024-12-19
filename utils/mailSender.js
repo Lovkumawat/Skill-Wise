@@ -9,7 +9,7 @@ const mailSender=async (email,title,body)=>{
                 user: process.env.MAIL_USER,
                 pass: process.env.MAIL_PASS,
             }
-        });
+        })
 
         let info = await transporter.sendMail({
             from: `"StudyNoation || -by Lov_Kumawat" <${process.env.MAIL_USER}>`,
@@ -20,8 +20,12 @@ const mailSender=async (email,title,body)=>{
         
         console.log("INFO", info);
         return info;
+
+  
     }
     catch(error){
+        console.error("SMTP Error: ", error.message);
+        console.error("Full Error: ", error);
         console.log(error.message);
     }
 }
