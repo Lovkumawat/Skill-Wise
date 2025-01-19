@@ -12,7 +12,7 @@ exports.createCourse = async (req, res) => {
 		let {
 			courseName,
 			courseDescription,
-			whatYouWillLearn,
+			whatYouWillLearn, // Benifits of the course
 			price,
 			tag,
 			category,
