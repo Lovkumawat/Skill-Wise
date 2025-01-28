@@ -63,7 +63,7 @@ exports.updateSection = async (req, res) => {
     )
     const course = await Course.findById(courseId)
       .populate({
-        path: "courseContent",
+        path: "courseContent", // section 
         populate: {
           path: "subSection",
         },
