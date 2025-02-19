@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-/src/components
+
 /src/data
 /src/service
 /src/reducer
@@ -10,8 +10,9 @@ src/utils/avgRating.js
 src/utils/dateFormatter.js
 src/pages/Catalog.jsx
 /src/services
-
-
+/src/components/common
+/src/components/core/catalog
+/src/components/core/HomePage
 /.pnp
 .pnp.js
 

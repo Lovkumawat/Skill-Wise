@@ -220,7 +220,7 @@ function CourseDetails() {
                     className="text-yellow-25"
                     onClick={() => setIsActive([])}
                   >
-                    Collapse all sections
+                   Collapse all sections
                   </button>
                 </div>
               </div>
