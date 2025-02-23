@@ -107,9 +107,11 @@ export default function VideoDetailsSidebar({ setReviewModal }) {
                       } `}
                       key={i}
                       onClick={() => {
+                        // on click we nevigate that lecture 
                         navigate(
                           `/view-course/${courseEntireData?._id}/section/${course?._id}/sub-section/${topic?._id}`
                         )
+                        // when we click an lecture it will conver it in a active lecture 
                         setVideoBarActive(topic._id)
                       }}
                     >
