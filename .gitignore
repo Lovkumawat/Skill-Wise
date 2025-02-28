@@ -5,7 +5,7 @@
 
 /src/data
 /src/service
-/src/reducer
+
 src/utils/avgRating.js
 src/utils/dateFormatter.js
 src/pages/Catalog.jsx
