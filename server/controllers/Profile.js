@@ -211,7 +211,7 @@ exports.getEnrolledCourses = async (req, res) => {
 
 exports.instructorDashboard = async (req, res) => {
   try {
-    const courseDetails = await Course.find({ instructor: req.user.id })
+    const courseDetails = await Course.find({ instructor: req.user.id });
 
     const courseData = courseDetails.map((course) => {
       const totalStudentsEnrolled = course.studentsEnroled.length
@@ -233,6 +233,6 @@ exports.instructorDashboard = async (req, res) => {
     res.status(200).json({ courses: courseData })
   } catch (error) {
     console.error(error)
-    res.status(500).json({ message: "Server Error" })
+    res.status(500).json({ message: " Internal Server Error" })
   }
 }
