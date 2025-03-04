@@ -8,7 +8,7 @@
 
 src/utils/avgRating.js
 src/utils/dateFormatter.js
-src/pages/Catalog.jsx
+
 /src/services
 /src/components/common
 /src/components/core/catalog
