@@ -10,7 +10,10 @@ src/utils/avgRating.js
 src/utils/dateFormatter.js
 
 /src/services
-/src/components/common
+/src/components/common/RatingStars.jsx
+/src/components/common/ReviewSlider.jsx
+/src/components/common/Footer.jsx
+/src/components/common/Navbar.jsx
 /src/components/core/catalog
 /src/components/core/HomePage
 /src/components/core/Dashboard
