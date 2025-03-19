@@ -4,12 +4,17 @@
 /node_modules
 
 
-/src/service
+/src/services/operations/authAPI.js
+/src/services/operations/courseDetailsAPI.js
+/src/services/operations/pageAndComponentDatas.js
+/src/services/operations/profileAPI.js
+/src/services/operations/studentFeaturesAPI.js
+
 
 src/utils/avgRating.js
 src/utils/dateFormatter.js
 
-/src/services
+
 /src/components/common/RatingStars.jsx
 /src/components/common/ReviewSlider.jsx
 
