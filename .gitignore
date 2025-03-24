@@ -4,7 +4,7 @@
 /node_modules
 
 
-/src/services/operations/authAPI.js
+
 /src/services/operations/courseDetailsAPI.js
 /src/services/operations/pageAndComponentDatas.js
 /src/services/operations/profileAPI.js
