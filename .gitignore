@@ -3,29 +3,18 @@
 # dependencies
 /node_modules
 
-
-
-
-
-
-
-
-
-
-
-
-
 /src/components/common/RatingStars.jsx
 /src/components/common/ReviewSlider.jsx
 
 
-
-/src/components/core/HomePage
 /src/components/core/Dashboard
+
 /src/components/core/AboutPage
 /src/components/core/ContactUsPage
+
 /src/components/core/Auth/OpenRoute.jsx
 /src/components/core/Auth/PrivateRoute.jsx
+
 /src/components/core/Auth/ProfileDropDown.jsx
 /.pnp
 .pnp.js
