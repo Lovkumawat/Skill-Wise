@@ -3,7 +3,7 @@
 # dependencies
 /node_modules
 
-/src/components/common/RatingStars.jsx
+
 /src/components/common/ReviewSlider.jsx
 
 
