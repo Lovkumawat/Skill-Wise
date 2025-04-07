@@ -10,7 +10,7 @@ import ReviewSlider from "../components/common/ReviewSlider"
 import CTAButton from "../components/core/HomePage/Button"
 import CodeBlocks from "../components/core/HomePage/CodeBlocks"
 import ExploreMore from "../components/core/HomePage/ExploreMore"
-import HighlightText from "../components/core/HomePage/HighlightText"
+import HighlightText from "../components/core/HomePage/HeighlightText"
 import InstructorSection from "../components/core/HomePage/InstructorSection"
 import LearningLanguageSection from "../components/core/HomePage/LearningLanguageSection"
 import TimelineSection from "../components/core/HomePage/TimelineSection"
@@ -90,9 +90,9 @@ function Home() {
               link: "/signup",
               active: false,
             }}
-            codeColor={"text-yellow-25"}
+            codeColor={"text-yellow-25"} 
             codeblock={`<!DOCTYPE html>\n <html lang="en">\n<head>\n<title>This is myPage</title>\n</head>\n<body>\n<h1><a href="/">Header</a></h1>\n<nav> <a href="/one">One</a> <a href="/two">Two</a> <a href="/three">Three</a>\n</nav>\n</body>`}
-            backgroundGradient={<div className="codeblock1 absolute"></div>}
+            backgroundGradient={<div className="codeblock1 absolute w-full h-full bg-gradient-to-br from-[#1f1f1f] to-[#111] z-[-1] rounded-lg"></div>}
           />
         </div>
 
@@ -119,7 +119,7 @@ function Home() {
               link: "/signup",
               active: false,
             }}
-            codeColor={"text-white"}
+            codeColor={"text-pink-100"}
             codeblock={`import React from "react";\n import CTAButton from "./Button";\nimport TypeAnimation from "react-type";\nimport { FaArrowRight } from "react-icons/fa";\n\nconst Home = () => {\nreturn (\n<div>Home</div>\n)\n}\nexport default Home;`}
             backgroundGradient={<div className="codeblock2 absolute"></div>}
           />
@@ -128,10 +128,10 @@ function Home() {
         {/* Explore Section */}
         <ExploreMore />
       </div>
-
+                
       {/* Section 2 */}
       <div className="bg-pure-greys-5 text-richblack-700">
-        <div className="homepage_bg h-[320px]">
+        <div className="homepage_bg h-[320px]"> {/*App.css */} 
           {/* Explore Full Catagory Section */}
           <div className="mx-auto flex w-11/12 max-w-maxContent flex-col items-center justify-between gap-8">
             <div className="lg:h-[150px]"></div>

@@ -3,7 +3,7 @@ import { toast } from "react-hot-toast"
 import { setLoading, setToken } from "../../slices/authSlice"
 import { resetCart } from "../../slices/cartSlice"
 import { setUser } from "../../slices/profileSlice"
-import { apiConnector } from "../apiConnector"
+import { apiConnector } from "../apiconnector"
 import { endpoints } from "../apis"
 
 const {
@@ -35,7 +35,7 @@ export function sendOtp(email, navigate) {
       navigate("/verify-email")
     } catch (error) {
       console.log("SENDOTP API ERROR............", error)
-      toast.error("Could Not Send OTP")
+      toast.error(error.response?.data?.message || "Could Not Send OTP")
     }
     dispatch(setLoading(false))
     toast.dismiss(toastId)

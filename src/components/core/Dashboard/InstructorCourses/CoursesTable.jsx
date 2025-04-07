@@ -16,7 +16,7 @@ import {
   fetchInstructorCourses,
 } from "../../../../services/operations/courseDetailsAPI"
 import { COURSE_STATUS } from "../../../../utils/constants"
-import ConfirmationModal from "../../../Common/ConfirmationModal"
+import ConfirmationModal from "../../../common/ConfirmationModal"
 
 export default function CoursesTable({ courses, setCourses }) {
   const dispatch = useDispatch()
@@ -153,7 +153,7 @@ export default function CoursesTable({ courses, setCourses }) {
             ))
           )}
         </Tbody>
-      </Table> 
+      </Table>
       {confirmationModal && <ConfirmationModal modalData={confirmationModal} />}
     </>
   )
