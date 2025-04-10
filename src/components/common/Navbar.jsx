@@ -9,26 +9,7 @@ import { NavbarLinks } from "../../data/navbar-links"
 import { apiConnector } from "../../services/apiconnector"
 import { categories } from "../../services/apis"
 import { ACCOUNT_TYPE } from "../../utils/constants"
-import ProfileDropdown from "../core/Auth/ProfileDropdown"
-
-// const subLinks = [
-//   {
-//     title: "Python",
-//     link: "/catalog/python",
-//   },
-//   {
-//     title: "javascript",
-//     link: "/catalog/javascript",
-//   },
-//   {
-//     title: "web-development",
-//     link: "/catalog/web-development",
-//   },
-//   {
-//     title: "Android Development",
-//     link: "/catalog/Android Development",
-//   },
-// ];
+import ProfileDropdown from "../core/Auth/ProfileDropDown"
 
 function Navbar() {
   const { token } = useSelector((state) => state.auth)
@@ -47,7 +28,6 @@ function Navbar() {
         setSubLinks(res.data.data)
       } catch (error) {
         console.log("Could not fetch Categories.", error)
-        // setSubLinks([]);
       }
       setLoading(false)
     })()
@@ -90,7 +70,7 @@ function Navbar() {
                         <div className="absolute left-[50%] top-0 -z-10 h-6 w-6 translate-x-[80%] translate-y-[-40%] rotate-45 select-none rounded bg-richblack-5"></div>
                         {loading ? (
                           <p className="text-center">Loading...</p>
-                        ) : (subLinks && subLinks.length > 0) ? (
+                        ) : subLinks.length ? (
                           <>
                             {subLinks
                               ?.filter(
@@ -144,6 +124,7 @@ function Navbar() {
               )}
             </Link>
           )}
+          {/* if user not login then show signup and ligin button */}
           {token === null && (
             <Link to="/login">
               <button className="rounded-[8px] border border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100">
@@ -158,6 +139,7 @@ function Navbar() {
               </button>
             </Link>
           )}
+          {/* if user login then show profile dropdown button */}
           {token !== null && <ProfileDropdown />}
         </div>
         <button className="mr-4 md:hidden">
