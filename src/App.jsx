@@ -106,6 +106,8 @@ function App() {
         </PrivateRoute>
       }
     >
+      outlet concept used
+      {/* neasted route  */}
       <Route path="dashboard/my-profile" element={<MyProfile />} />
       
       <Route path="dashboard/Settings" element={<Settings />} />

@@ -30,7 +30,15 @@ export default function ProfileDropdown() {
       </div>
       {open && (
         <div
-          onClick={(e) => e.stopPropagation()}
+//      So, if someone clicks anywhere inside the dropdown menu (<div ...>), and you don't stop the event from propagating, it might:
+
+// Bubble up and re-trigger the parent onClick={() => setOpen(true)} or even any onClickOutside logic.
+
+// Cause unintended behavior, like closing the menu immediately after opening or not letting the user click links/buttons inside the dropdown.
+
+// ✅ So, e.stopPropagation() ensures:
+// Clicks inside the dropdown menu stay inside, and don’t trigger any parent click handlers (like the button toggle or useOnClickOutside).
+            onClick={(e) => e.stopPropagation()} // it will remove the effet of parent route 
           className="absolute top-[118%] right-0 z-[1000] divide-y-[1px] divide-richblack-700 overflow-hidden rounded-md border-[1px] border-richblack-700 bg-richblack-800"
           ref={ref}
         >
