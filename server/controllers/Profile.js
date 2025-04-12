@@ -113,7 +113,7 @@ exports.getAllUserDetails = async (req, res) => {
     })
   }
 }
-
+ 
 exports.updateDisplayPicture = async (req, res) => {
   try {
     const displayPicture = req.files.displayPicture

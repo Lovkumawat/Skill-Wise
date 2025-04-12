@@ -3,7 +3,7 @@ import { FiUpload } from "react-icons/fi"
 import { useDispatch, useSelector } from "react-redux"
 
 import { updateDisplayPicture } from "../../../../services/operations/SettingsAPI"
-import IconBtn from "../../../Common/IconBtn"
+import IconBtn from "../../../common/IconBtn"
 
 export default function ChangeProfilePicture() {
   const { token } = useSelector((state) => state.auth)
@@ -17,7 +17,7 @@ export default function ChangeProfilePicture() {
   const fileInputRef = useRef(null)
 
   const handleClick = () => {
-    fileInputRef.current.click()
+     fileInputRef.current.click()
   }
 
   const handleFileChange = (e) => {
