@@ -245,11 +245,9 @@ export default function CourseInformationForm() {
           <span className="ml-2 text-xs tracking-wide text-pink-200">
             Course Category is required
           </span>
-        )}   
-
+        )}
       </div>
       {/* Course Tags */}
-      {/* create a custom component for handling tags input   */}
       <ChipInput
         label="Tags"
         name="courseTags"

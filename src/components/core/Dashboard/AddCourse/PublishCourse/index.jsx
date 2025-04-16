@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom"
 import { editCourseDetails } from "../../../../../services/operations/courseDetailsAPI"
 import { resetCourseState, setStep } from "../../../../../slices/courseSlice"
 import { COURSE_STATUS } from "../../../../../utils/constants"
-import IconBtn from "../../../../Common/IconBtn"
+import IconBtn from "../../../../common/IconBtn"
 
 export default function PublishCourse() {
   const { register, handleSubmit, setValue, getValues } = useForm()
@@ -44,6 +44,7 @@ export default function PublishCourse() {
       goToCourses()
       return
     }
+    // if form is update
     const formData = new FormData()
     formData.append("courseId", course._id)
     const courseStatus = getValues("public")

@@ -131,7 +131,7 @@ exports.createCourse = async (req, res) => {
     })
   }
 }
-// Edit Course Details
+// EditCourse Details
 exports.editCourse = async (req, res) => {
   try {
     const { courseId } = req.body

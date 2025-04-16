@@ -106,6 +106,13 @@ exports.createSubSection = async (req, res) => {
   
   exports.deleteSubSection = async (req, res) => {
     try {
+      // This function is intended to:
+
+// Remove a sub-section ID from the subSection array in a parent section.
+
+// Delete the actual SubSection document from the database.
+
+// Return the updated section after deletion.
       const { subSectionId, sectionId } = req.body
       await Section.findByIdAndUpdate(
         { _id: sectionId },

@@ -5,9 +5,11 @@
 html, body {
   overflow-x: hidden;
 }
+
 .homepage_bg {
   background: url("../src/assets/Images/bghome.svg");
 }
+
 .spinner {
   width: 56px;
   height: 56px;

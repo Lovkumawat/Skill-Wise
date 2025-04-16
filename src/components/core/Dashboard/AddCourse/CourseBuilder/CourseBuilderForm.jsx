@@ -43,7 +43,7 @@ export default function CourseBuilderForm() {
       result = await updateSection(
         {
           sectionName: data.sectionName,
-          sectionId: editSectionName,
+          sectionId: editSectionName, // we set id in this 
           courseId: course._id,
         },
         token
