@@ -34,15 +34,15 @@ export async function BuyCourse(
   courses,
   user_details,
   navigate,
-  dispatch
-) {
+  dispatch                              
+) {                                   
   const toastId = toast.loading("Loading...")
-  try {
+  try {                                                                                                 
     // Loading the script of Razorpay SDK
     const res = await loadScript("https://checkout.razorpay.com/v1/checkout.js")
 
     if (!res) {
-      toast.error(
+      toast.error(                                                                                                                                 
         "Razorpay SDK failed to load. Check your Internet Connection."
       )
       return
@@ -51,7 +51,7 @@ export async function BuyCourse(
     // Initiating the Order in Backend
     const orderResponse = await apiConnector(
       "POST",
-      // it pont capturePayment api  
+      // it ponit capturePayment api  
       COURSE_PAYMENT_API,
       {
         courses,
@@ -65,10 +65,10 @@ export async function BuyCourse(
       throw new Error(orderResponse.data.message)
     }
     console.log("PAYMENT RESPONSE FROM BACKEND............", orderResponse.data)
-
+    console.log("currency",orderResponse.data.data.currency)
     // Opening the Razorpay SDK
     const options = {
-      key: process.env.RAZORPAY_KEY,
+      key: import.meta.env.VITE_RAZORPAY_KEY,
       currency: orderResponse.data.data.currency,
       amount: `${orderResponse.data.data.amount}`,
       order_id: orderResponse.data.data.id,
@@ -84,6 +84,7 @@ export async function BuyCourse(
         verifyPayment({ ...response, courses }, token, navigate, dispatch)
       },
     }
+    // create rezorpayy modal
     const paymentObject = new window.Razorpay(options)
     // resorpay key open at here 
     paymentObject.open()

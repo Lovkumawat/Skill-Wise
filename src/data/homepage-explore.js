@@ -61,7 +61,7 @@ export const HomePageExplore = [
                 lessionNumber: 6
             },
             {
-                heading: "SCSS",
+                heading: "CSS",
                 description: "Enhance your CSS with SCSS by using variables, nesting, mixins, and modular styling techniques.",
                 level: 'Beginner',
                 lessionNumber: 6
@@ -101,7 +101,7 @@ export const HomePageExplore = [
                 lessionNumber: 6
             },
             {
-                heading: "Nuxt.js",
+                heading: "Next.js",
                 description: "Explore Vue.js development with Nuxt.js, leveraging server-side rendering and modular structure.",
                 level: 'Beginner',
                 lessionNumber: 6

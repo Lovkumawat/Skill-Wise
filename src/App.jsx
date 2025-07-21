@@ -28,6 +28,8 @@ import CourseDetails from "./pages/CourseDetails";
 import ViewCourse from "./pages/ViewCourse";
 import VideoDetails from "./components/core/ViewCourse/VideoDetails";
 import Instructor from "./components/core/Dashboard/InstructorDashboard/Instructor";
+import { useEffect } from "react";
+import { getUserDetails } from "./services/operations/profileAPI";
 
 function App() {
 
@@ -35,6 +37,14 @@ function App() {
   const navigate = useNavigate();
   
   const { user } = useSelector((state) => state.profile)
+  const { token } = useSelector((state) => state.auth)
+
+  // Fetch user details if token exists but user data is not present
+  useEffect(() => {
+    if (token && !user) {
+      dispatch(getUserDetails(token, navigate))
+    }
+  }, [token, user, dispatch, navigate])
 
 
   return (
@@ -106,7 +116,7 @@ function App() {
         </PrivateRoute>
       }
     >
-      outlet concept used
+      Outlet concept used
       {/* neasted route  */}
       <Route path="dashboard/my-profile" element={<MyProfile />} />
       

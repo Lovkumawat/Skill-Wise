@@ -6,11 +6,16 @@ import CourseSubSectionAccordion from "./CourseSubSectionAccordion"
 export default function CourseAccordionBar({ course, isActive, handleActive }) {
   const contentEl = useRef(null)
 
+  // Add null check for course
+  if (!course) {
+    return null
+  }
+
   // Accordian state
   const [active, setActive] = useState(false)
   useEffect(() => {
     setActive(isActive?.includes(course._id))
-  }, [isActive])
+  }, [isActive, course._id])
   const [sectionHeight, setSectionHeight] = useState(0)
   useEffect(() => {
     setSectionHeight(active ? contentEl.current.scrollHeight : 0)
@@ -28,7 +33,7 @@ export default function CourseAccordionBar({ course, isActive, handleActive }) {
           <div className="flex items-center gap-2">
             <i
               className={
-                isActive.includes(course._id) ? "rotate-180" : "rotate-0"
+                isActive?.includes(course._id) ? "rotate-180" : "rotate-0"
               }
             >
               <AiOutlineDown />
@@ -37,7 +42,7 @@ export default function CourseAccordionBar({ course, isActive, handleActive }) {
           </div>
           <div className="space-x-4">
             <span className="text-yellow-25">
-              {`${course.subSection.length || 0} lecture(s)`}
+              {`${course?.subSection?.length || 0} lecture(s)`}
             </span>
           </div>
         </div>

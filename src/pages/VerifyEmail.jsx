@@ -13,7 +13,7 @@ function VerifyEmail() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // it will check that all data are present or not if not then it will render in signup by usin useEffet()
+  // it will check that all data are present or not if not then it will render in signup by using useEffet()
 
   useEffect(() => {
     // Only allow access of this route when user has filled the signup form

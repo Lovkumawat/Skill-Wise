@@ -24,7 +24,24 @@ export default function Upload({
   const inputRef = useRef(null)
 
   const onDrop = (acceptedFiles) => {
+    console.log("Files dropped:", acceptedFiles)
     const file = acceptedFiles[0]
+    if (file) {
+      previewFile(file)
+      setSelectedFile(file)
+    }
+  }
+
+  const handleClick = () => {
+    console.log("Upload area clicked")
+    if (inputRef.current) {
+      inputRef.current.click()
+    }
+  }
+
+  const handleFileChange = (event) => {
+    console.log("File input change:", event.target.files)
+    const file = event.target.files[0]
     if (file) {
       previewFile(file)
       setSelectedFile(file)
@@ -36,6 +53,9 @@ export default function Upload({
       ? { "image/*": [".jpeg", ".jpg", ".png"] }
       : { "video/*": [".mp4"] },
     onDrop,
+    noClick: false,
+    noKeyboard: false,
+    multiple: false,
   })
 
   const previewFile = (file) => {
@@ -96,15 +116,29 @@ export default function Upload({
           <div
             className="flex w-full flex-col items-center p-6"
             {...getRootProps()}
+            onClick={handleClick}
           >
-            <input {...getInputProps()} ref={inputRef} />
+            <input 
+              {...getInputProps()} 
+              ref={inputRef}
+              style={{ display: 'none' }}
+              accept={!video ? "image/*" : "video/*"}
+              onChange={handleFileChange}
+            />
             <div className="grid aspect-square w-14 place-items-center rounded-full bg-pure-greys-800">
               <FiUploadCloud className="text-2xl text-yellow-50" />
             </div>
             <p className="mt-2 max-w-[200px] text-center text-sm text-richblack-200">
               Drag and drop an {!video ? "image" : "video"}, or click to{" "}
-              <span className="font-semibold text-yellow-50">Browse</span> a
-              file
+              <span 
+                className="font-semibold text-yellow-50 cursor-pointer"
+                onClick={(e) => {
+                  e.stopPropagation()
+                  handleClick()
+                }}
+              >
+                Browse
+              </span> a file
             </p>
             <ul className="mt-10 flex list-disc justify-between space-x-12 text-center  text-xs text-richblack-200">
               <li>Aspect ratio 16:9</li>

@@ -47,6 +47,7 @@ export default function RenderSteps() {
               </button>
               
             </div>
+            {/*  for dashed */}
             {item.id !== steps.length && (
               <>
                 <div
@@ -59,7 +60,7 @@ export default function RenderSteps() {
           </>
         ))}
       </div>
-
+        {/* title */}
       <div className="relative mb-16 flex w-full select-none justify-between">
         {steps.map((item) => (
           <>

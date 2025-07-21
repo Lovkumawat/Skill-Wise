@@ -135,7 +135,7 @@ export default function CourseInformationForm() {
       }
       return
     }
-
+      // first time visite
     const formData = new FormData()
     formData.append("courseName", data.courseTitle)
     formData.append("courseDescription", data.courseShortDesc)

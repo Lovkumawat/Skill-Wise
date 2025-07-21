@@ -16,6 +16,17 @@ function CourseDetailsCard({ course, setConfirmationModal, handleBuyCourse }) {
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
+  // Add null check for course object
+  if (!course) {
+    return (
+      <div className="flex min-h-[600px] w-full flex-col gap-4 rounded-md bg-richblack-700 p-4 text-richblack-5">
+        <div className="flex aspect-video w-full items-center justify-center rounded-2xl bg-richblack-800">
+          Loading...
+        </div>
+      </div>
+    )
+  }
+
   const {
     thumbnail: ThumbnailImage,
     price: CurrentPrice,
@@ -68,16 +79,16 @@ function CourseDetailsCard({ course, setConfirmationModal, handleBuyCourse }) {
             <button
               className="yellowButton"
               onClick={
-                user && course?.studentsEnrolled.includes(user?._id)
+                user && course?.studentsEnrolled?.includes(user?._id)
                   ? () => navigate("/dashboard/enrolled-courses")
                   : handleBuyCourse
               }
             >
-              {user && course?.studentsEnrolled.includes(user?._id)
+              {user && course?.studentsEnrolled?.includes(user?._id)
                 ? "Go To Course"
                 : "Buy Now"}
             </button>
-            {(!user || !course?.studentsEnrolled.includes(user?._id)) && (
+            {(!user || !course?.studentsEnrolled?.includes(user?._id)) && (
               <button onClick={handleAddToCart} className="blackButton">
                 Add to Cart
               </button>

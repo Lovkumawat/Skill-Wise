@@ -3,8 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   signupData: null,
   loading: false,
-  token: localStorage.getItem("token") || null, // if we do not use this then our data is not persist 
-};
+  token: localStorage.getItem("token") ? JSON.parse(localStorage.getItem("token")) : null, // if we do not use this then our data is not persist 
+};// to maintain durability
 
 const authSlice = createSlice({
   name: "auth",
